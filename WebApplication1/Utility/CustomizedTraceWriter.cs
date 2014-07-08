@@ -24,7 +24,7 @@ namespace WebApplication1.Utility
             try { 
                 var record = new TraceRecord(request, category, level);
                 traceAction(record);
-                string message = String.Format("[{0}]-[{1}]-[{2}]-[{3}]-[{4}]-[{5}]-[Message#{6}#]\r\n", record.Level, record.Timestamp, record.Status, record.Kind, record.Operator, record.Operation, record.Message);
+                string message = String.Format("[{0,-5}]-[{1}]-[{2,-3}]-[{3,-5}]-[{4}]-[{5}]-[Message#{6}#]\r\n", record.Level, record.Timestamp, record.Status, record.Kind, record.Operator, record.Operation, record.Message);
                 //File.AppendAllText(logFilePath, message);
                 writeLog(level, message);
             } catch (Exception e)
